@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Car</title>
+    <style>
+        body {
+            margin: 0;
+            height: 600px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to bottom, skyblue 80%, #555 80%);
+        }
+        body::before {
+      content: "";
+      position: absolute;
+      top: 40px;
+      right: 100px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: goldenrod;
+      box-shadow: 0 0 30px orange;
+        }
+         body::after {
+      content: "";
+      position: absolute;
+      bottom: 120px;
+      left: 400px;
+      width: 120px;
+      height: 80px;
+      background: linear-gradient(lightblue, lightblue) 20px 20px / 25px 25px no-repeat, burlywood;
+      border-top: 40px solid brown;
+      z-index: 0;
+    }
+    .tree {
+        position: absolute;
+        bottom: 120px;
+        left: 250px;
+        width: 20px;
+        height: 80px;
+        background: saddlebrown;
+    }
+    .tree::before {
+        content: "";
+        position: absolute;
+        bottom: 50px;
+        left: -30px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: forestgreen;
+    }
+        
+        .car {
+            position: absolute;
+            right: 100%;
+            bottom: 120px;
+            width: 200px;
+            height: 50px;
+            background: rgb(220, 217, 20);
+            border-radius: 10px;
+            animation: drive 5s ease-out forwards;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 50px;
+            text-align: center;
+            z-index: 1;
+        }
+        .car::before {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: 40px;
+            width: 100px;
+            height: 40px;
+            background: lightcyan;
+            border: 4px solid rgb(220, 217, 20);
+            border-radius: 20px 20px 0 0;
+            box-sizing: border-box;
+        }
+        .car::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 20px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #222;
+            box-shadow: 110px 0 0 #222;
+        }
+
+        @keyframes drive {
+            from {
+                right: 100%;
+            }
+            to {
+                right: 50px;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        <div class="tree"></div>
+        <div class="car">TAXI</div>
+    </body>
+</html>
